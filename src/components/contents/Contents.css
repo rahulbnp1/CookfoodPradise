@@ -1,0 +1,70 @@
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+}
+
+#contentsBoxes {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.row1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+
+  width: calc(33.33% - 20px); /* To fit 3 in a row with 20px gap */
+  box-sizing: border-box;
+
+  cursor: pointer; 
+
+}
+
+.row1-img {
+  flex: 0 0 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row1-img img {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.row1-text {
+  flex: 0 0 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.row1-text p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+.row1:hover {
+  transform: translateY(-4px); /* 👈 smooth lift on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* 👈 deeper shadow */
+  background-color: #fff3e0; /* 👈 orange-tinted background on hover */
+}

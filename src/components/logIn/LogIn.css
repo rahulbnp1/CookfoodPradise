@@ -1,0 +1,112 @@
+/* Overall container */
+#login {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #f4f6f8;
+  gap: 30px; /* Space between form and image */
+}
+
+/* Form card styling */
+#login-Form {
+  flex: 1 1 250px;
+  max-width: 350px;
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form heading */
+#login-Form h1 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #333;
+  text-align: center;
+}
+
+/* Input fields */
+#login-Form input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0 20px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+#login-Form input:focus {
+  border-color: #ff7043;
+  outline: none;
+}
+
+/* Buttons */
+#login-Form button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  background-color: #ff7043;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#login-Form button:hover {
+  background-color: #ff5722;
+}
+
+/* Sign up text */
+#login-Form p {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+#login-Form span {
+  color: #ff7043;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Image side */
+/* #login-Image {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+} */
+
+#login-Image img {
+  width: auto;
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 768px) {
+  #login {
+    flex-direction: column-reverse;
+    padding: 40px 20px;
+  }
+
+  #login-Image {
+    padding: 10px 0;
+  }
+
+  #login-Form {
+    max-width: 90%;
+    padding: 30px 20px;
+  }
+}

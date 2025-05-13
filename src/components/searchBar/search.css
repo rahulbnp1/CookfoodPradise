@@ -1,0 +1,56 @@
+#banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 20vmax;
+  background: linear-gradient(rgba(255, 165, 0, 0.3), rgba(255, 140, 0, 0.5)), url(D:\feb-dev\project-dev\food-paradise\paradise\src\banner.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+}
+
+#heading {
+  color: #ffffff;  
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#searching {
+  width: 50vmax;
+  height: 34px;
+  color: #333;
+  border-radius: 20px;
+  border: 2px solid #ff6600;  
+  padding: 0 10px;
+  margin-top: 20px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+#searching:focus {
+  border-color: #ff4500;  
+}
+
+#btn1 {
+  width: 10vmax;
+  height: 40px;
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border-radius: 20px;
+  background-color: #ff6600; 
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+#btn1:hover {
+  background-color: #ff4500;  
+}
+
+#btn1:active {
+  background-color: #ff2a00;  
+}
