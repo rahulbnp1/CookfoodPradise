@@ -9,15 +9,19 @@ import SignUp from './components/logIn/SignUp';
 import LogIn from './components/logIn/LogIn';
 import UploadingDas from './components/upload/Upload';
 import AboutUs from './components/aboutUs/AboutUs';
-import MainPage from './components/mainPage/MainPage';
 import Upload from './components/upload/Upload';
 import Error from './components/error/Error';
-import SideBar from './components/sideBar/SideBar';
+import SideBaar from './components/sideBar/SideBaar';
 import Dashboard from './components/sideBar/Dashboard';
 import LogOut from './components/sideBar/LogOut';
-import NavBar from './components/navBar/NavBar';
-
-
+import Copyright from './components/copyright/Copyright';
+import AllPost from './components/contents/AllPost';
+import Recipe from './components/RecipePage/Recipe';
+import MyProfile from './components/sideBar/MyProfile';
+import EditPost from './components/sideBar/EditPost'
+import EditProfile from './components/sideBar/EditProfile';
+import RecipesByCat from './components/contents/RecipesByCat';
+import SearchedRecipe from './components/searchBar/SearchedRecipe';
 
 const allRoutes = createBrowserRouter([
   {path: "/", element: <App />},
@@ -26,14 +30,43 @@ const allRoutes = createBrowserRouter([
   {path: "/signUp", element: <SignUp />},
   {path: "/login", element: <LogIn />},
   {path: "/uploadingDas", element: <UploadingDas />},
-  {path: "/mainPage", element: <MainPage />},
   {path: "/upload", element: <Upload />},
-  {path: "/sideBar", element: <SideBar />},
+  {path: "/recipe/:id", element: <Recipe />},
+  {path: "/allPost", element: <AllPost />},
+  {path: "/error", element: <Error />},
+  {path: "/logout", element: <LogOut />},
+  {path: "/copyright", element: <Copyright />},
+  {path: "/myProfile", element: <MyProfile />},
+  {path: "/editPost/:id", element: <EditPost />},
+
+  {path: "/sidebaar", element: <SideBaar />},
+  {
+    path: "/sidebaar",
+    element: <SideBaar />,
+    children: [
+      { index: true, element: <Dashboard /> },
+      { path: "dashboard", element: <Dashboard /> },
+      { path: "upload", element: <Upload /> },
+      { path: "myProfile", element: <MyProfile /> }, 
+      { path: "editProfile", element: <EditProfile /> }, 
+      {path: "editPost/:id", element: <EditPost />},
+    ],
+  },
   {path: "/dashboard", element: <Dashboard />},
   {path: "/logOut", element: <LogOut />},
-  {path: "*", element: <Error />}
+  {path: "copyright", element: <Copyright />},
+  {path: "*", element: <Error />},
+  {path: "/signUp", element: <SignUp />},
+  {path: "/allposts", element: <AllPost />},
+  {path: "/recipeByCat/:id", element: <RecipesByCat />},
+  {path: "/searchedbyname", element: <SearchedRecipe /> }
+
+
 
 ]);
+
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

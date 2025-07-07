@@ -5,6 +5,7 @@ import PoojaImage from '../../picture/pooja.webp';
 import Rahul from '../../picture/rahul.png'
 import './AboutUs.css';
 import Footer from "../footer/Footer";
+import Copyright from "../copyright/Copyright";
 
 
 
@@ -76,6 +77,7 @@ export default function AboutUs() {
             
         </div>
         <Footer />
+        <Copyright />
         </>
     );
 }

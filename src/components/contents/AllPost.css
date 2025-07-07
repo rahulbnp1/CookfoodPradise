@@ -1,0 +1,81 @@
+.contents-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #f8f8f8;
+}
+
+.recipe-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Changed display to block to stack image and title */
+.recipe-header {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* Constrain image size and make it look neat */
+.recipe-image {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.recipe-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.recipe-category {
+  font-size: 0.9rem;
+  background-color: #ffd8a8;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  color: #5c3d00;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.recipe-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.view-btn {
+  padding: 0.5rem 1rem;
+  background-color: #ff7043;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.view-btn:hover {
+  background-color: #ff5722;
+}
+
+.loading-text {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #888;
+  margin-top: 3rem;
+}

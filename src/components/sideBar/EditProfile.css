@@ -1,0 +1,82 @@
+.profile-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  padding: 40px;
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.profile-left,
+.profile-right {
+  flex: 1 1 300px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-left strong,
+.profile-right strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+  color: #333;
+}
+
+.profile-left input,
+.profile-right input[type="file"],
+.profile-right input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ff8c00;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.profile-left input:focus,
+.profile-right input[type="file"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.profile-picture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-right img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ff8c00;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.update-button {
+  background-color: #ff8c00; /* Dark orange */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.update-button:hover {
+  background-color: #e67e00; /* Slightly darker orange on hover */
+  transform: scale(1.03);
+}
+
+.update-button:active {
+  transform: scale(0.97);
+}
+

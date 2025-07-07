@@ -1,56 +1,93 @@
-import React, { useState } from 'react';
-import './Dashboard.css'; // ⬅️ Link the CSS file
-
-const initialData = [
-  { title: 'Spicy Paneer Tikka', date: '2025-05-01', duration: '30 mins' },
-  { title: 'Mango Lassi', date: '2025-04-28', duration: '10 mins' },
-  { title: 'Aloo Paratha', date: '2025-04-20', duration: '25 mins' },
-  { title: 'Butter Chicken', date: '2025-04-15', duration: '45 mins' },
-];
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import './Dashboard.css';
+import { useNavigate } from 'react-router-dom';
+import { FaEye } from "react-icons/fa";
 
 export default function Dashboard() {
-  const [videoData, setVideoData] = useState(initialData);
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
-  const handleEdit = (index) => {
-    alert(`Edit clicked for: ${videoData[index].title}`);
+  const fetchData = () => {
+    axios.get('http://localhost:9090/recipe')
+      .then(response => {
+        setData(response.data);
+        setLoading(false);
+        console.log("All recipes:", response.data);
+        console.log("All recipes:", response.data.dateOfPublish);
+      })
+      .catch(error => {
+        console.error("Fetch error:", error);
+        setLoading(false);
+      });
   };
 
-  const handleDelete = (index) => {
-    const updatedData = videoData.filter((_, i) => i !== index);
-    setVideoData(updatedData);
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+
+
+  const handleDelete = (id) => {
+    if(window.confirm("Are you sure you want to delete this recipe?")){
+    axios.delete(`http://localhost:9090/recipe/${id}`)
+      .then(response => {
+        console.log("Recipe deleted:", response.data);
+        fetchData();
+      })
+      .catch(error => {
+        console.error("Delete error:", error);
+      })
+    }
   };
 
   return (
     <div className="dashboard-container">
       <h1>Dashboard</h1>
-      <p>Below is the list of uploaded cooking videos:</p>
+      <p>Below is the list of uploaded recipes:</p>
 
-      <table className="video-table">
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Date of Upload</th>
-            <th>Cooking Duration</th>
-            <th>Edit</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          {videoData.map((video, index) => (
-            <tr key={index}>
-              <td>{video.title}</td>
-              <td>{video.date}</td>
-              <td>{video.duration}</td>
-              <td>
-                <button className="edit-btn" onClick={() => handleEdit(index)}>Edit</button>
-              </td>
-              <td>
-                <button className="delete-btn" onClick={() => handleDelete(index)}>Delete</button>
-              </td>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <table className="video-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Date of Upload</th>
+              <th>Cooking Duration</th>
+              <th>Category</th>
+              <th>View</th>
+              <th>Edit</th>
+              <th>Delete</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {data.map((recipe) => (
+              <tr key={recipe.id}>
+                <td>{recipe.title}</td>
+                <td>{new Date(recipe.dateOfPublish).toLocaleDateString('en-GB', {
+                 day: '2-digit',
+                  month: 'short',
+                  year: 'numeric'
+                  })}</td>
+
+                <td>{recipe.cookingTime}</td>
+                <td>{recipe.category.name}</td>
+                <td><button onClick={() =>
+                     navigate(`/recipe/${recipe.id}`)}
+                      className='eye-btn'><FaEye /></button></td>
+                <td>
+                  <button className="edit-btn" onClick={() => navigate(`/sidebaar/editPost/${recipe.id}`)}>Edit</button>
+                </td>
+                <td>
+                  <button className="delete-btn" onClick={() => handleDelete(recipe.id)}>Delete</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
     </div>
   );
 }

@@ -1,0 +1,18 @@
+.copyright {
+  text-align: center;
+  
+  background-color: #fffaf0; /* light cream */
+  color: #555; /* dark gray for readability */
+  font-size: 0.9rem;
+  border-top: 1px solid #f0e0c0;
+}
+
+.copyright a {
+  color: #ff6f00; /* deep orange to match your theme */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.copyright a:hover {
+  text-decoration: underline;
+}

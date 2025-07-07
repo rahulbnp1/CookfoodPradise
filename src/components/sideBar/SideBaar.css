@@ -1,0 +1,20 @@
+.layout-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  height: 100vh; /* Make layout full height of viewport */
+  overflow: hidden; /* Prevent scroll on the main container */
+}
+
+.left-column {
+  grid-column: span 2;
+  background-color: #f9f9f9;
+  height: 100%; /* Fill full height */
+  overflow: hidden; /* No scroll */
+}
+
+.right-column {
+  grid-column: span 10;
+  height: 100%;
+  overflow-y: auto; /* Scroll only this column */
+  padding: 20px; /* Optional padding */
+}

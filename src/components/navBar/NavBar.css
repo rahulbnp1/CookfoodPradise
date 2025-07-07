@@ -12,11 +12,12 @@
 #navBar .logo {
   height: 60px;
   width: auto;
+  padding-left: 35px;
 }
 
 #navLinks {
   display: flex;
-  margin-left: auto; /* Pushes links to the right */
+  margin-left: auto;
   gap: 20px;
 }
 
@@ -32,20 +33,47 @@
   color: #ff6600;
 }
 
-/* Responsive design for small screens */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.shopping {
+  font-size: 1.8rem; 
+  cursor: pointer;
+  margin-right: 1rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.shopping:hover {
+  transform: scale(1.1);
+  color: #ff6600; 
+}
+
+
+/* Responsive Design */
 @media screen and (max-width: 768px) {
-  #navBar {
-    flex-direction: column;
-    align-items: flex-start;
+  .hamburger {
+    display: block;
   }
 
   #navLinks {
+    display: none;
     flex-direction: column;
     width: 100%;
-    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  #navLinks.open {
+    display: flex;
   }
 
   #navLinks a {
-    margin: 5px 0;
+    margin: 10px 0;
   }
 }

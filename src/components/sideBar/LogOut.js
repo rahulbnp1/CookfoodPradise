@@ -4,7 +4,7 @@ export default function LogOut() {
   const logoutConfirm = () => {
     const confirmed = window.confirm("Are you sure you want to log out?");
     if (confirmed) {
-      // Example logout logic
+     
       localStorage.removeItem("authToken");
       window.location.href = "/login";
     }

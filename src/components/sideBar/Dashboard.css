@@ -41,3 +41,12 @@
   background-color: #d32f2f;
   color: white;
 }
+
+.eye-btn{
+  
+  color: rgb(200, 20, 20);
+  border: none;
+}
+.eye-btn svg {
+  font-size: 1.5rem; /* Adjust as needed: 1.5rem = 24px */
+}

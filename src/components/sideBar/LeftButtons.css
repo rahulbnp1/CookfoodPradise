@@ -1,0 +1,61 @@
+.leftButtons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Space between icon and text */
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: #f9f9f9;
+  position: sticky;
+}
+
+.leftButtons:hover {
+  background-color: #e0e0e0; /* Light gray on hover */
+}
+
+.leftButtons p {
+  margin: 0;
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+}
+
+.leftButtons svg {
+  font-size: 1.25rem; /* Adjust icon size */
+  color: #007bff; /* Optional: blue icons */
+}
+
+.small-profilepic {
+  background: #000;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ccc;
+  background-color: #e0e0e0;
+  border-color: #000102;
+}
+
+#username{
+  color: #007bff;
+}
+
+.profile-image1 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 480px) {
+  .small-profilepic {
+    width: 50px;  /* Slightly bigger on mobile */
+    height: 50px;
+    border-width: 2px;
+  }
+}

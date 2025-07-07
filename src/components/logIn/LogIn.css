@@ -1,4 +1,4 @@
-/* Overall container */
+
 #login {
   display: flex;
   flex-wrap: wrap;
@@ -6,10 +6,10 @@
   align-items: center;
   padding: 60px 20px;
   background-color: #f4f6f8;
-  gap: 30px; /* Space between form and image */
+  gap: 30px; 
 }
 
-/* Form card styling */
+
 #login-Form {
   flex: 1 1 250px;
   max-width: 350px;
@@ -21,7 +21,7 @@
   flex-direction: column;
 }
 
-/* Form heading */
+
 #login-Form h1 {
   margin-bottom: 20px;
   font-size: 28px;
@@ -64,7 +64,7 @@
   background-color: #ff5722;
 }
 
-/* Sign up text */
+
 #login-Form p {
   margin-top: 10px;
   text-align: center;
@@ -78,14 +78,6 @@
   cursor: pointer;
 }
 
-/* Image side */
-/* #login-Image {
-  flex: 1 1 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-} */
 
 #login-Image img {
   width: auto;
@@ -94,11 +86,10 @@
   object-fit: contain;
 }
 
-/* Responsive layout */
 @media screen and (max-width: 768px) {
   #login {
     flex-direction: column-reverse;
-    padding: 40px 20px;
+    padding: 20px 10px;
   }
 
   #login-Image {
@@ -106,7 +97,10 @@
   }
 
   #login-Form {
+    width: 90%;
     max-width: 90%;
-    padding: 30px 20px;
+    padding: 20px 15px;
+    box-shadow: none; 
+    border-radius: 12px;
   }
 }

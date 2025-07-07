@@ -1,29 +1,31 @@
+import { FaYoutube, FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+
 import './Footer.css';
+import { MdEmail } from "react-icons/md";
 
 export default function Footer() {
   return (
     <div className="footer">
-      <div className="footer-section">
+
+      <div id="footer-section">
+        <h2>Contact Info</h2>
+        <p>Host & Founder</p> 
+        <MdEmail /> &nbsp; <a href="mailto:cookfoodparadise@gmail.com">cookfoodparadise@gmail.com</a>
+        <p>Manager & Co-founder</p>
+         <MdEmail /> &nbsp; <a href="mailto:official.rahulbnp@gmail.com">official.rahulbnp@gmail.com</a>
+      </div>
+
+      <div id="footer-section">
         <h2>Follow us on Social Media</h2>
         <ul>
-          <li><a href="#">YouTube</a></li>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Twitter</a></li>
+          <li><FaYoutube /> &nbsp; <a href="https://www.youtube.com/@CookfoodParadise">YouTube</a></li>
+          <li><FaFacebook /> &nbsp; <a href="https://www.facebook.com/cookfoodparadise/">Facebook</a></li>
+          <li><FaInstagram /> &nbsp; <a href="https://www.instagram.com/cookfoodparadise/">Instagram</a></li>
+          <li><FaTwitter /> &nbsp; <a href="https://x.com/cookfoodparadis">Twitter</a></li>
         </ul>
       </div>
 
-      <div className="footer-section">
-        <h2>Contact Form</h2>
-        <form>
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <textarea placeholder="Your Message" rows="4" required></textarea>
-          <button type="submit">Send</button>
-        </form>
-      </div>
-
-      <div className="footer-section">
+      <div id="footer-section">
         <h2>Find Us on the Map</h2>
         <div className="map-placeholder">
           <iframe

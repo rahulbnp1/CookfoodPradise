@@ -1,0 +1,45 @@
+.profile-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  gap: 40px;
+  background-color: #e0e0e0;
+}
+
+.profile-left {
+  flex: 1;
+  font-size: 18px;
+}
+
+.profile-left strong {
+  display: block;
+  margin-top: 10px;
+}
+
+.profile-left p {
+  margin: 5px 0 15px;
+  color: #333;
+}
+
+.profile-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0e0e0;
+}
+
+.profile-image {
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-color: #ffd8a8;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
