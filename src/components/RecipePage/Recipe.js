@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { motion } from "framer-motion";
 import "./Recipe.css";
 import NavBar from "../navBar/NavBar";
 import CategoryBar from "../category/CategoryBar";
@@ -36,8 +37,6 @@ export default function Recipe() {
       .then((response) => {
         setData(response.data);
         setLoading(false);
-        console.log("Recipe fetched:", response.data);
-        console.log("dateOfPublish:", data.dateOfPublish);
       })
       .catch((error) => {
         console.error("Fetch error:", error);
@@ -58,10 +57,29 @@ export default function Recipe() {
     <>
       <NavBar />
       <CategoryBar />
-      <h3 onClick={()=> navigate("/")}>&lt;--Go back</h3>
-      <div className="container">
+      <motion.h3
+        initial={{ x: -20, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        onClick={() => navigate("/")}
+      >
+        &lt;-- Go back
+      </motion.h3>
+
+      <motion.div
+        className="container shade-cn"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+      >
         <h2>{data.title}</h2>
-        <div className="recipe-container">
+
+        <motion.div
+          className="recipe-container"
+          initial={{ scale: 0.95, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <div className="recipe-left-img">
             {data.imageData && (
               <img
@@ -72,35 +90,32 @@ export default function Recipe() {
           </div>
 
           <div className="recipe-right">
-            <p>
-              <strong>Cooking Time:</strong> {data.cookingTime}
-            </p>
-            <p>
-              <strong>Date of Publish:</strong>{" "}
-              {new Date(data.dateOfPublish).toLocaleString()}
-            </p>
-            <p>
-              <strong>Category:</strong> {data.category?.name || "No category"}
-            </p>
+            <p><strong>Cooking Time:</strong> {data.cookingTime}</p>
+            <p><strong>Date of Publish:</strong> {new Date(data.dateOfPublish).toLocaleString()}</p>
+            <p><strong>Category:</strong> {data.category?.name || "No category"}</p>
             <div className="recipe-description">
               <strong>Full Recipe:</strong>
               <p>{data.recipe}</p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {embedUrl && (
-          <div className="recipe-video">
+          <motion.div
+            className="recipe-video"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
             <iframe
               src={embedUrl}
               title="YouTube video player"
-              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
-          </div>
+          </motion.div>
         )}
-      </div>
+      </motion.div>
       <br />
       <Footer />
       <Copyright />

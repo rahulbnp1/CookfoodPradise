@@ -1,79 +1,72 @@
 #navBar {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  background-color: #ffffff;
   padding: 10px 30px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff8f0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-#navBar .logo {
-  height: 60px;
-  width: auto;
-  padding-left: 35px;
-}
-
-#navLinks {
-  display: flex;
-  margin-left: auto;
-  gap: 20px;
-}
-
-#navLinks a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  font-size: 16px;
-  transition: color 0.3s ease;
-}
-
-#navLinks a:hover {
-  color: #ff6600;
+.logo {
+  height: 50px;
+  cursor: pointer;
 }
 
 .hamburger {
   display: none;
-  font-size: 28px;
+  font-size: 2rem;
   cursor: pointer;
-  margin-left: auto;
+}
+
+#navLinks {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+#navLinks.mobile {
+  flex-direction: column;
+  background-color: #fff3e0;
+  padding: 10px 0;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+#navLinks a,
+.navLinks-desktop a {
+  text-decoration: none;
+  color: #6d4c41;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+#navLinks a:hover,
+.navLinks-desktop a:hover {
+  color: #ef6c00;
 }
 
 .shopping {
-  font-size: 1.8rem; 
   cursor: pointer;
-  margin-right: 1rem;
-  color: #333;
+  font-size: 1.5rem;
+  color: #6d4c41;
+}
+
+.navLinks-desktop {
   display: flex;
+  gap: 20px;
   align-items: center;
-  transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.shopping:hover {
-  transform: scale(1.1);
-  color: #ff6600; 
-}
+/* Responsive */
+@media (max-width: 768px) {
+  .navLinks-desktop {
+    display: none;
+  }
 
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
   .hamburger {
     display: block;
-  }
-
-  #navLinks {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  #navLinks.open {
-    display: flex;
-  }
-
-  #navLinks a {
-    margin: 10px 0;
   }
 }
